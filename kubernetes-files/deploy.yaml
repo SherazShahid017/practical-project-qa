@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app
+  labels: 
+    app: myflask
+spec:
+  selector:
+    matchLabels:
+      app: myflask
+  template:
+    metadata:
+      labels:
+        app: myflask
+    spec:
+      containers:
+      - name: flask-container
+        image: sherazshahid017/trio-flask
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DATABASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: secretsql
+              key: database-uri
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-app
+  labels: 
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /etc/nginx/conf.d
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: nginx-config
