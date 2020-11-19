@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-app
+  name: py-app
   labels: 
-    app: myflask
+    app: project
 spec:
   selector:
     matchLabels:
-      app: myflask
+      app: project
   template:
     metadata:
       labels:
-        app: myflask
+        app: project
     spec:
       containers:
-      - name: flask-container
-        image: sherazshahid017/trio-flask
+      - name: pyapp-container
+        image: sherazshahid017/project-be:latest
         ports:
         - containerPort: 5000
         env:
@@ -25,6 +25,27 @@ spec:
             secretKeyRef:
               name: secretsql
               key: database-uri
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-fe
+  labels:
+    app: project
+spec:
+  selector:
+    matchLabels:
+      app: project
+  template:
+    metadata:
+      labels:
+        app: project
+    spec:
+      containers:
+      - name: pyapp-container
+        image: sherazshahid017/project-fe:latest
+        ports:
+        - containerPort: 5001
 ---
 apiVersion: apps/v1
 kind: Deployment
