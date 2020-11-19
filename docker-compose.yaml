@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: ./frontend/nginx.conf
+      target: /etc/nginx/nginx.conf
+
+  py-app:
+    build: ./backend
+    image: mypy-app:latest
+    container_name: pythonapp-container
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+    environment:
+      DATABASE_URI: ${DATABASE_URI}
