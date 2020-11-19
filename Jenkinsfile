@@ -16,7 +16,7 @@ pipeline{
 	    ///////////////////////////////////////////////////
 	    stage ('Kubernetes Build') {
 	        steps {
-		    sh 'kubectl apply -f ./kubernetes-files/secrets.yaml'
+		    sh 'sudo kubectl apply -f ./kubernetes-files/secrets.yaml'
 		}
 	    }
 	}
