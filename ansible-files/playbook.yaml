@@ -12,4 +12,13 @@
   become: true
   roles:
   - nginx 
- 
+
+- hosts: aws
+  become: true
+  roles:
+  - aws
+
+- hosts: kube
+  become: true
+  roles:
+  - kube 
