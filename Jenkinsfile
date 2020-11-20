@@ -16,8 +16,7 @@ pipeline{
 	    ///////////////////////////////////////////////////
 	    stage ('Kubernetes Build') {
 	        steps {
-		    sh 'cd kubernetes-files/'
-		    sh 'sudo kubectl apply -f secrets.yaml'
+		    sh 'kubectl get pods'
 		}
 	    }
 	}
