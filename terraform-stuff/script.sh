@@ -15,8 +15,8 @@ sudo apt install ansible -y
 
 #install my ansible files
 git clone https://github.com/SherazShahid017/practical-project-qa/
-git branch kubernetes
 cd practical-project-qa/
+git branch kubernetes
 cd ansible-files/
 
 #set the local-ip variable to the ec2-ip output
