@@ -7,7 +7,7 @@ data:
       server {
           listen 80;
           location / {
-              proxy_pass http://py-app:5000;
+              proxy_pass http://app-fe:5000;
           }
       }
 
