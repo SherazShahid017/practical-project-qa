@@ -17,6 +17,7 @@ pipeline{
 	    stage ('Kubernetes Build') {
 	        steps {
 		    sh 'cd kubernetes-files/'
+		    sh 'pwd'
 		    sh 'kubectl apply -f service.yaml'
 		}
 	    }
