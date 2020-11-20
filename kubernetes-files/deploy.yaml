@@ -25,21 +25,26 @@ spec:
             secretKeyRef:
               name: secretsql
               key: database-uri
+        - name: SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: secretsql
+              key: secret-key
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-fe
   labels:
-    app: project
+    app: front
 spec:
   selector:
     matchLabels:
-      app: project
+      app: front
   template:
     metadata:
       labels:
-        app: project
+        app: front
     spec:
       containers:
       - name: pyapp-container
