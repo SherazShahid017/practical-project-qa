@@ -16,7 +16,7 @@ pipeline{
 	    ///////////////////////////////////////////////////
 	    stage ('Kubernetes Build') {
 	        steps {
-		    sh 'kubectl apply -f /kubernetes/service.yaml'
+		    sh 'kubectl apply -f service.yaml'
 		}
 	    }
 	}
