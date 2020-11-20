@@ -19,8 +19,16 @@ pipeline{
 		    sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/services.yaml'
 		    sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/secrets.yaml'
 		    sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/configmap.yaml'
-		    sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/deploy.yaml'
+		    sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/deploy.yaml'i
 		}
 	    }
+	    //////////////////////////////////////////////////
+	    stage ('Automated Py Tests') {
+		steps {
+		    sh 'chmod +x script.sh'
+		    sh './script.sh'
+		}
+	    }
+	    /////////////////////////////////////////////////
 	}
 }
