@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: py-app
+  name: back
   labels: 
-    app: project
+    app: back
 spec:
   selector:
     matchLabels:
-      app: project
+      app: back
   template:
     metadata:
       labels:
-        app: project
+        app: back
     spec:
       containers:
-      - name: pyapp-container
+      - name: backend
         image: sherazshahid017/project-be:latest
         ports:
         - containerPort: 5000
@@ -34,7 +34,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-fe
+  name: front
   labels:
     app: front
 spec:
@@ -47,7 +47,7 @@ spec:
         app: front
     spec:
       containers:
-      - name: pyapp-container
+      - name: front
         image: sherazshahid017/project-fe:latest
         ports:
         - containerPort: 5001
