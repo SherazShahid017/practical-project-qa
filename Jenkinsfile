@@ -16,7 +16,7 @@ pipeline{
 	    ///////////////////////////////////////////////////
 	    stage ('Kubernetes Build') {
 	        steps {
-		    sh 'kubectl get pods'
+		    sh 'sudo kubectl get pods'
 		}
 	    }
 	}
