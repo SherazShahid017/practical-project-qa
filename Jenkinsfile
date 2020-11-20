@@ -4,19 +4,19 @@ pipeline{
             ////////////////////////////////////////////////////
             stage ('Build all images and push to DockerHub') {
                 steps {
-                    sh 'sudo docker build -t sherazshahid017/project-be:latest ./backend/'
-		    sh 'sudo docker build -t sherazshahid017/project-fe:latest ./frontend/'
-		    sh 'sudo docker build -t sherazshahid017/project-db:latest ./database/'
-		    sh 'sudo docker login -u sherazshahid017 -p Sshahid98'
-		    sh 'sudo docker push sherazshahid017/project-be:latest' 
-		    sh 'sudo docker push sherazshahid017/project-fe:latest' 
-		    sh 'sudo docker push  sherazshahid017/project-db:latest'
+                    sh 'docker build -t sherazshahid017/project-be:latest ./backend/'
+		    sh 'docker build -t sherazshahid017/project-fe:latest ./frontend/'
+		    sh 'docker build -t sherazshahid017/project-db:latest ./database/'
+		    sh 'docker login -u sherazshahid017 -p Sshahid98'
+		    sh 'docker push sherazshahid017/project-be:latest' 
+		    sh 'docker push sherazshahid017/project-fe:latest' 
+		    sh 'docker push  sherazshahid017/project-db:latest'
                 }
             }
 	    ///////////////////////////////////////////////////
 	    stage ('Kubernetes Build') {
 	        steps {
-		    sh 'sudo kubectl get pods'
+		    sh 'kubectl apply -f /kubernetes/service.yaml'
 		}
 	    }
 	}
