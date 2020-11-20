@@ -9,3 +9,8 @@ variable "secID" {
 variable "pub-key" {
     
 }
+
+variable "scripts" {
+    description = "Pulling path to script from main.tf"
+    default = ""
+}

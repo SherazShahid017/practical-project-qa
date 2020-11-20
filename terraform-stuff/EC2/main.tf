@@ -9,10 +9,7 @@ resource "aws_instance" "instance1" {
     Name = "Terraform-built-ec2"
   }
 
-  user_data = data.template_file.scripts.template
+  user_data = var.scripts
 
 }
 
-data "template_file" "scripts" {
-  template = file("${path.module}/EC2/script/script.sh")
-}
