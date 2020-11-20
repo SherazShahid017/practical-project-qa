@@ -16,7 +16,8 @@ pipeline{
 	    ///////////////////////////////////////////////////
 	    stage ('Kubernetes Build') {
 	        steps {
-		    sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/service.yaml'
+		    sh 'cd kubernetes-files/'
+		    sh 'kubectl apply -f service.yaml'
 		}
 	    }
 	}
