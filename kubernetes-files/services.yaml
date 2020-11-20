@@ -1,22 +1,22 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: py-app-back-serv-ip
+  name: backend
   labels:
-    app: back
+    app: backend
 spec:
   selector:
-    app: back
+    app: backend
   ports:
   - protocol: TCP
-    port: 5000
-    targetPort: 5000
+    port: 5001
+    targetPort: 5001
   type: ClusterIP
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: py-app-front-serv-ip
+  name: front
   labels:
     app: front
 spec:
@@ -24,8 +24,8 @@ spec:
     app: front
   ports:
   - protocol: TCP
-    port: 5001
-    targetPort: 5001
+    port: 5000
+    targetPort: 5000
   type: ClusterIP  
 ---
 apiVersion: v1
