@@ -14,10 +14,15 @@ module "EC2" {
   ec2sub = module.VPC.ec2subnet
   secID = module.VPC.securityID
   pub-key = var.public-key
+  scripts = data.template_file.scripts.template
 }
 
 module "RDS" {
   source = "./RDS"
   priv-sub-id = module.VPC.privsub-id
   priv-sub-id2 = module.VPC.privsub-id2
+}
+
+data "template_file" "scripts" {
+  template = file("${path.module}/EC2/script/script.sh")
 }

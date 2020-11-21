@@ -1,20 +1,9 @@
 - name: Install pip and curl
   apt:
-<<<<<<< HEAD
-    name: [ 'python3-pip' , 'curl' ]
+    name: [ 'python3-pip' , 'python-pip' , 'curl' ]
     state: latest
-    update_cache: true
-    
-- name: Pip install awscli
-  pip:
-    name: awscli                   
-=======
-    name: ['python3-pip', 'curl']
-    state: latest
-    become: true
     update_cache: true
 
 - name: Pip install awscli
   pip:
     name: awscli 
->>>>>>> 6e463ff04f67a2506276d7c7e15a7c7369e33e96
