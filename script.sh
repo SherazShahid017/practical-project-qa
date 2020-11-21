@@ -18,5 +18,4 @@ ssh -tt -i ~/.ssh/id_rsa ubuntu@34.244.3.228 << EOF
 	sudo docker exec backend bash -c "pytest tests/ --cov application"
 	sudo docker exec frontend bash -c "pytest tests/ --cov application"
 	
-	sudo docker-compose down	
 EOF
