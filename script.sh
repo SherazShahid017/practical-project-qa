@@ -1,6 +1,6 @@
 #! /bin/bash
 
-ssh testIP << EOF
+ssh 3.250.45.108 << EOF
 
 git clone https://github.com/LukeBenson/install-scripts.git
 cd install-scripts/
