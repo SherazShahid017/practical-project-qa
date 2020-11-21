@@ -27,6 +27,7 @@ resource "aws_db_instance" "test-db" {
   parameter_group_name = "default.mysql5.7"
   db_subnet_group_name = aws_db_subnet_group.subgroup.name
   skip_final_snapshot = true
+  vpc_security_group_ids = [var.secid]
 }
 
 resource "aws_db_instance" "prod-db" {
@@ -41,4 +42,5 @@ resource "aws_db_instance" "prod-db" {
   parameter_group_name = "default.mysql5.7"
   db_subnet_group_name = aws_db_subnet_group.subgroup.name
   skip_final_snapshot = true
+  vpc_security_group_ids = [var.secid]
 }

@@ -21,6 +21,7 @@ module "RDS" {
   source = "./RDS"
   priv-sub-id = module.VPC.privsub-id
   priv-sub-id2 = module.VPC.privsub-id2
+  secid = module.VPC.securityID
 }
 
 data "template_file" "scripts" {
