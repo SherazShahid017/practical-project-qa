@@ -3,7 +3,6 @@ pipeline{
 	stages{
 			stage ('Install dependancies on Jenkins user') {
                 steps {
-					sh 'docker login -u sherazshahid017 -p Sshahid98'
 					sh 'sudo usermod -aG docker jenkins'
 					sh 'cp -r ~/home/ubuntu/.kube ~/'
 					sh 'sudo chown -R jenkins .kube/'
@@ -27,10 +26,11 @@ pipeline{
 	    }
 		//////////////////////////////////////////////////
 		stage ('Push images to Docker Hub') {
-			steps {
+			steps { 
+				sh 'docker login -u sherazshahid017 -p Sshahid98'
 				sh 'docker push sherazshahid017/project-be:latest' 
-		    	sh 'docker push sherazshahid017/project-fe:latest' 
-		    	sh 'docker push  sherazshahid017/project-db:latest'
+		    		sh 'docker push sherazshahid017/project-fe:latest' 
+		    		sh 'docker push  sherazshahid017/project-db:latest'
 			}
 		}
 	    //////////////////////////////////////////////////
