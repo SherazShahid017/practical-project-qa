@@ -1,31 +1,45 @@
 pipeline{
     agent any
 	stages{
-            ////////////////////////////////////////////////////
-            stage ('Build all images and push to DockerHub') {
+			stage ('Install dependancies on Jenkins user') {
                 steps {
-                    sh 'docker build -t sherazshahid017/project-be:latest ./backend/'
-		    sh 'docker build -t sherazshahid017/project-fe:latest ./frontend/'
-		    sh 'docker build -t sherazshahid017/project-db:latest ./database/'
-		    sh 'docker push sherazshahid017/project-be:latest' 
-		    sh 'docker push sherazshahid017/project-fe:latest' 
-		    sh 'docker push  sherazshahid017/project-db:latest'
+					sh 'docker login -u sherazshahid017 -p {{ password }}'
+					sh 'sudo usermod -aG docker jenkins'
+					sh 'cp -r ~/home/ubuntu/.kube ~/'
+					sh 'sudo chown -R jenkins .kube/'
+					sh 'sudo chgrp -R jenkins .kube/'
+				}
+			}
+            ////////////////////////////////////////////////////
+            stage ('Build all images') {
+                steps {
+					sh 'docker build -t sherazshahid017/project-be:latest ./backend/'
+					sh 'docker build -t sherazshahid017/project-fe:latest ./frontend/'
+					sh 'docker build -t sherazshahid017/project-db:latest ./database/'
                 }
             }
 	    ///////////////////////////////////////////////////
-	    stage ('Kubernetes Build') {
-	        steps {
-		    sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/services.yaml'
-		    sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/secrets.yaml'
-		    sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/configmap.yaml'
-		    sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/deploy.yaml'
+	    stage ('Automated Py Tests') {
+			steps {
+				sh 'chmod +x script.sh'
+				sh './script.sh'
 		}
 	    }
+		//////////////////////////////////////////////////
+		stage ('Push images to Docker Hub') {
+			steps {
+				sh 'docker push sherazshahid017/project-be:latest' 
+		    	sh 'docker push sherazshahid017/project-fe:latest' 
+		    	sh 'docker push  sherazshahid017/project-db:latest'
+			}
+		}
 	    //////////////////////////////////////////////////
-	    stage ('Automated Py Tests') {
-		steps {
-		    sh 'chmod +x script.sh'
-		    sh './script.sh'
+	    stage ('Kubernetes Build') {
+	        steps {
+				sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/services.yaml'
+				sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/secrets.yaml'
+				sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/configmap.yaml'
+				sh 'kubectl apply -f /var/lib/jenkins/workspace/project-pipeline/kubernetes-files/deploy.yaml'
 		}
 	    }
 	    /////////////////////////////////////////////////
