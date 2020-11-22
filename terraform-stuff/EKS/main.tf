@@ -10,7 +10,7 @@ resource "aws_eks_cluster" "eks" {
 }
 
 resource "aws_eks_node_group" "cluster-node" {
-  cluster_name    = "eks-cluster-nodes"
+  cluster_name    = "eks-cluster"
   node_group_name = "default"
   node_role_arn   = "arn:aws:iam::484643051390:role/NodeInstanceRole"
   subnet_ids      = [var.sub1-id, var.sub2-id]
