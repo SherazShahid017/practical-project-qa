@@ -18,5 +18,5 @@ services:
       published: 5001
       protocol: tcp
     environment:
-            DATABASE_URI: mysql+pymysql://admin:root1234@terraform-20201121105938089900000001.cr9zze1q6zyi.eu-west-1.rds.amazonaws.com:3306/users
-            TEST_DATABASE_URI: mysql+pymysql://admin:root1234@terraform-20201121105938104200000002.cr9zze1q6zyi.eu-west-1.rds.amazonaws.com:3306/testdb
+            DATABASE_URI: mysql+pymysql://admin:root1234@terraform-20201122151632166500000002.cr9zze1q6zyi.eu-west-1.rds.amazonaws.com:3306/users
+            TEST_DATABASE_URI: mysql+pymysql://admin:root1234@terraform-20201122151632162900000001.cr9zze1q6zyi.eu-west-1.rds.amazonaws.com:3306/testdb
