@@ -12,7 +12,7 @@ ssh -tt -i ~/.ssh/id_rsa ubuntu@18.202.167.4 << EOF
 	## Clone my project
 	git clone https://github.com/SherazShahid017/practical-project-qa
 	cd practical-project-qa/
-	git checkout pytest
+	git checkout dev
 
 	## Setting up mysql and running the file
 	sudo apt-get update
