@@ -3,18 +3,17 @@ pipeline{
 	stages{
 			stage ('Install dependancies on Jenkins user') {
                 steps {
-					sh 'sudo usermod -aG docker jenkins'
-					sh 'cp -r ~/home/ubuntu/.kube ~/'
-					sh 'sudo chown -R jenkins .kube/'
-					sh 'sudo chgrp -R jenkins .kube/'
+				sh 'cd'
+				sh 'docker login -u sherazshahid017 -p Sshahid98'		
+				sh 'sudo usermod -aG docker jenkins'
 				}
 			}
             ////////////////////////////////////////////////////
             stage ('Build all images') {
                 steps {
-					sh 'docker build -t sherazshahid017/project-be:latest ./backend/'
-					sh 'docker build -t sherazshahid017/project-fe:latest ./frontend/'
-					sh 'docker build -t sherazshahid017/project-db:latest ./database/'
+				sh 'docker build -t sherazshahid017/project-be:latest ./backend/'
+				sh 'docker build -t sherazshahid017/project-fe:latest ./frontend/'
+				sh 'docker build -t sherazshahid017/project-db:latest ./database/'
                 }
             }
 	    ///////////////////////////////////////////////////
@@ -27,7 +26,6 @@ pipeline{
 		//////////////////////////////////////////////////
 		stage ('Push images to Docker Hub') {
 			steps { 
-				sh 'docker login -u sherazshahid017 -p Sshahid98'
 				sh 'docker push sherazshahid017/project-be:latest' 
 		    		sh 'docker push sherazshahid017/project-fe:latest' 
 		    		sh 'docker push  sherazshahid017/project-db:latest'
