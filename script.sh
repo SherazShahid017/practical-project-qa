@@ -27,11 +27,8 @@ ssh -i ~/.ssh/id_rsa ubuntu@18.202.167.4 << EOF
 		sudo apt install mysql-client-core-5.7 -y
 	fi
 
-	mysql -h terraform-20201122151632162900000001.cr9zze1q6zyi.eu-west-1.rds.amazonaws.com -P 3306 -u admin -proot1234
-	use testdb;
-	source ~/practical-project-qa/database/Create.sql;
-	exit
-
+	mysql -h terraform-20201122151632162900000001.cr9zze1q6zyi.eu-west-1.rds.amazonaws.com -P 3306 -u admin -proot1234 < ~/practical-project-qa/database/Create.sql;
+	
 	########################### Running tests ################################
 	sudo docker-compose up -d
 		
