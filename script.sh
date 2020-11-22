@@ -1,6 +1,6 @@
 #! /bin/bash
 
-ssh -tt -i ~/.ssh/id_rsa ubuntu@34.244.3.228 << EOF
+ssh -tt -i ~/.ssh/id_rsa ubuntu@18.202.167.4 << EOF
 
 	git clone https://github.com/LukeBenson/install-scripts.git
 	cd install-scripts/
@@ -18,11 +18,10 @@ ssh -tt -i ~/.ssh/id_rsa ubuntu@34.244.3.228 << EOF
 	sudo apt-get update
 	sudo apt install mysql-client-core-5.7
 
-	mysql -h endpoint -u admin -proot1234 << EOF
-		use testdb;
-		source ~/practical-project-qa/database/Create.sql
-		exit
-	EOF
+	mysql -h terraform-20201122151632162900000001.cr9zze1q6zyi.eu-west-1.rds.amazonaws.com -P 3306 -u admin -proot1234
+	use testdb;
+	source ~/practical-project-qa/database/Create.sql;
+	exit
 
 	## Running tests
 	sudo docker-compose up -d
