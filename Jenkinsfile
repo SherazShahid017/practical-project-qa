@@ -18,8 +18,7 @@ pipeline{
 	    ///////////////////////////////////////////////////
 	    stage ('Automated Py Tests') {
 			steps {
-				sh 'chmod +x script.sh'
-				sh './script.sh'
+				sh './script2.sh'
 		}
 	    }
 		//////////////////////////////////////////////////
