@@ -4,7 +4,6 @@ pipeline{
 			stage ('Install dependancies on Jenkins user') {
                 steps {
 				sh 'cd'
-				sh 'docker login -u sherazshahid017 -p Sshahid98'		
 				sh 'sudo usermod -aG docker jenkins'
 				}
 			}
