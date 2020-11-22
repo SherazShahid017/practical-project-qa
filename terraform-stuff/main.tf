@@ -28,9 +28,9 @@ data "template_file" "scripts" {
   template = file("${path.module}/EC2/script/script.sh")
 }
 
-module "EKS" {
-  source  = "./EKS"
-  sub1-id = module.VPC.privsub-id
-  sub2-id = module.VPC.privsub-id2
-  sec-id  = module.VPC.securityID
-}
+#module "EKS" {
+#  source  = "./EKS"
+#  sub1-id = module.VPC.privsub-id
+#  sub2-id = module.VPC.privsub-id2
+#  sec-id  = module.VPC.securityID
+#}
