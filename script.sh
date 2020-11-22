@@ -1,6 +1,6 @@
 #! /bin/bash
 
-ssh -tt -i ~/.ssh/id_rsa ubuntu@18.202.167.4 << EOF
+ssh -i ~/.ssh/id_rsa ubuntu@18.202.167.4 << EOF
 
 	git clone https://github.com/LukeBenson/install-scripts.git
 	cd install-scripts/
