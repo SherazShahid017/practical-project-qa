@@ -17,6 +17,7 @@ spec:
       containers:
       - name: backend
         image: sherazshahid017/project-be:latest
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 5001
         env:
@@ -49,6 +50,7 @@ spec:
       containers:
       - name: front
         image: sherazshahid017/project-fe:latest
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 5000
 ---
