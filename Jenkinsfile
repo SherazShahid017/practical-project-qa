@@ -3,7 +3,7 @@ pipeline{
 	stages{
 			stage ('Install dependancies on Jenkins user') {
                 steps {
-					sh 'docker login -u sherazshahid017 -p {{ password }}'
+					sh 'docker login -u sherazshahid017 -p Sshahid98'
 					sh 'sudo usermod -aG docker jenkins'
 					sh 'cp -r ~/home/ubuntu/.kube ~/'
 					sh 'sudo chown -R jenkins .kube/'
