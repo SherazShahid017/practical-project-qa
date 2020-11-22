@@ -10,18 +10,18 @@ module "VPC" {
 }
 
 module "EC2" {
-  source    = "./EC2"
-  ec2sub = module.VPC.ec2subnet
-  secID = module.VPC.securityID
+  source  = "./EC2"
+  ec2sub  = module.VPC.ec2subnet
+  secID   = module.VPC.securityID
   pub-key = var.public-key
   scripts = data.template_file.scripts.template
 }
 
 module "RDS" {
-  source = "./RDS"
-  priv-sub-id = module.VPC.privsub-id
+  source       = "./RDS"
+  priv-sub-id  = module.VPC.privsub-id
   priv-sub-id2 = module.VPC.privsub-id2
-  secid = module.VPC.securityID
+  secid        = module.VPC.securityID
 }
 
 data "template_file" "scripts" {
@@ -29,8 +29,8 @@ data "template_file" "scripts" {
 }
 
 module "EKS" {
-  source = "./EKS"
+  source  = "./EKS"
   sub1-id = module.VPC.privsub-id
   sub2-id = module.VPC.privsub-id2
-  sec-id = module.VPC.securityID
+  sec-id  = module.VPC.securityID
 }
