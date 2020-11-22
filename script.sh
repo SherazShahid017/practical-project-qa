@@ -3,7 +3,7 @@
 ssh -i ~/.ssh/id_rsa ubuntu@18.202.167.4 << EOF
 	
 	###################### Install docker/docker-compose ######################
-	if [ ! -f practical-project-qa ]; then
+	if [ ! -f install-scripts/ ]; then
 		git clone https://github.com/LukeBenson/install-scripts.git
 		cd install-scripts/
 		./docker_install.sh
@@ -14,7 +14,7 @@ ssh -i ~/.ssh/id_rsa ubuntu@18.202.167.4 << EOF
 
 
 	################# Clone my project #################################
-	if [ ! -f practical-project-qa ]; then
+	if [ ! -f practical-project-qa/ ]; then
     	    git clone https://github.com/SherazShahid017/practical-project-qa
             cd practical-project-qa/
             git checkout dev
