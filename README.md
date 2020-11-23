@@ -72,7 +72,7 @@ Throughout the course of a project, a Risk Assessment is used in order to increa
 
 ![Imgur](https://imgur.com/undefined)
 
-<h2> Architecture of My Solution </h2>
+<h2> Architecture of My Solution </h2> 
 
 The Architecture that this project had followed can be seen as below. This was a 3 tier micro Flask application deployed on AWS via a CI Pipeline. The infrastructure had been set up via Terraform and Ansible on AWS. The application had been containerised by Docker and orchestrated via Kubernetes. The deploymenet had been on a Jenkins CI server.
 
