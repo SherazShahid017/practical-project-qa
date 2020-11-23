@@ -82,6 +82,14 @@ The Architecture that this project had followed can be seen as below. This was a
 
 ![Imgur](https://imgur.com/II5ICa2.png)
 
+<h2> Future Improvements </h2>
+<ul>
+<li> Internal Server Error on both back and front-end which could not be resolved, thus the application is inaccesible. </li>
+<li> Security Flaws and risks as much confidential information (IP's, Passwords, Endpoints) had been pushed to Git and require more security </li>
+<li> More aspects could have easily been automated; building the EKS via Terraform and the test-ec2 via Terraform and Ansible </li>
+</ul>
+
+
 <h2> Authors </h2>
 Sheraz Shahid - QA Trainee
  
