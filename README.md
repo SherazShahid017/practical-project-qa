@@ -80,7 +80,7 @@ The Architecture that this project had followed can be seen as below. This was a
 
 <h3> Jenkins Job Build Stages </h3>
 
-![Imgur](https://imgur.com/undefined.png)
+![Imgur](https://imgur.com/II5ICa2.png)
 
 <h2> Authors </h2>
 Sheraz Shahid - QA Trainee
