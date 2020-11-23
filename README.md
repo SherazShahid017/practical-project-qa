@@ -54,9 +54,11 @@ In order to do so, this involved a Kanban Scrum board, using the Jira software. 
 
 These were then assigned story points in order to gauge the difficulty of the task in accordance to my abilities and the time available; this was done to allow for an estimation on the sprint backlog, as well as preparing me for the task at hand. 
 
-Once all tasks were assigned story points, these were then grouped by epics which would allow for a collation of related backlog items so that they could be grouped. The user stories had been grouped by the following epics: Docker, Git, AWS, Jenkins 
+Once all tasks were assigned story points, these were then grouped by epics which would allow for a collation of related backlog items so that they could be grouped. The user stories had been grouped by the following epics: Docker, Git, AWS, Jenkins, Terraform and Kubernetes.
 
-*INSERT SCREENSHOT OF JIRA BOARD* 
+A trello board had also been used for personal organisation throughout the project.
+
+![Imgur](https://imgur.com/ypId20m)
  
  
 
@@ -66,6 +68,22 @@ Throughout the course of a project, a Risk Assessment is used in order to increa
 
 <h3>Key </h3>
 
+![Imgur](https://imgur.com/gpjQoME)
+
+![Imgur](https://imgur.com/undefined)
+
+<h2> Architecture of My Solution </h2>
+
+The Architecture that this project had followed can be seen as below. This was a 3 tier micro Flask application deployed on AWS via a CI Pipeline. The infrastructure had been set up via Terraform and Ansible on AWS. The application had been containerised by Docker and orchestrated via Kubernetes. The deploymenet had been on a Jenkins CI server.
+
+![Imgur](https://imgur.com/sDPHlen)
+
+<h3> Jenkins Job Build Stages </h3>
+
+![Imgur](https://imgur.com/undefined)
+
+<h2> Authors </h2>
+Sheraz Shahid - QA Trainee
  
 
  
