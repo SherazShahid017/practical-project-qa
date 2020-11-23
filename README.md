@@ -91,7 +91,7 @@ The Architecture that this project had followed can be seen as below. This was a
 
 
 <h2> Authors </h2>
-Sheraz Shahid - QA Trainee
+By Sheraz Shahid - QA Trainee
  
 
  
