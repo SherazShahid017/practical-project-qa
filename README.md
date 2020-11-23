@@ -58,7 +58,7 @@ Once all tasks were assigned story points, these were then grouped by epics whic
 
 A trello board had also been used for personal organisation throughout the project.
 
-![Imgur](https://imgur.com/ypId20m)
+![Imgur](https://imgur.com/ypId20m.png)
  
  
 
