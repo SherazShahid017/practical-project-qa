@@ -70,7 +70,7 @@ Throughout the course of a project, a Risk Assessment is used in order to increa
 
 ![Imgur](https://imgur.com/gpjQoME.png)
 
-![Imgur](https://imgur.com/undefined.png)
+![Imgur](https://imgur.com/L6bShHT.png)
 
 <h2> Architecture of My Solution </h2> 
 
