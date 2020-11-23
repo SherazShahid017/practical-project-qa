@@ -68,19 +68,19 @@ Throughout the course of a project, a Risk Assessment is used in order to increa
 
 <h3>Key </h3>
 
-![Imgur](https://imgur.com/gpjQoME)
+![Imgur](https://imgur.com/gpjQoME.png)
 
-![Imgur](https://imgur.com/undefined)
+![Imgur](https://imgur.com/undefined.png)
 
 <h2> Architecture of My Solution </h2> 
 
 The Architecture that this project had followed can be seen as below. This was a 3 tier micro Flask application deployed on AWS via a CI Pipeline. The infrastructure had been set up via Terraform and Ansible on AWS. The application had been containerised by Docker and orchestrated via Kubernetes. The deploymenet had been on a Jenkins CI server.
 
-![Imgur](https://imgur.com/sDPHlen)
+![Imgur](https://imgur.com/sDPHlen.png)
 
 <h3> Jenkins Job Build Stages </h3>
 
-![Imgur](https://imgur.com/undefined)
+![Imgur](https://imgur.com/undefined.png)
 
 <h2> Authors </h2>
 Sheraz Shahid - QA Trainee
