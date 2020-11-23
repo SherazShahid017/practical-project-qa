@@ -17,7 +17,6 @@ ssh -i ~/.ssh/id_rsa ubuntu@18.202.167.4 << EOF
 	if [ ! -d practical-project-qa/ ]; then
     	    git clone https://github.com/SherazShahid017/practical-project-qa
             cd practical-project-qa/
-            git checkout dev
 	fi	
 
 
