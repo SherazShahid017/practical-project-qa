@@ -11,27 +11,27 @@ resource "aws_subnet" "pub-sub" {
   cidr_block              = "10.0.1.0/24"
   map_public_ip_on_launch = true
   tags = {
-    Name = "Terraform-SUB"
+    Name: "Pub"
   }
 }
 
 resource "aws_subnet" "priv-sub" {
-  availability_zone       = "eu-west-1a"
+  availability_zone       = "eu-west-1b"
   vpc_id                  = aws_vpc.terraform-vpc.id
   cidr_block              = "10.0.2.0/24"
   map_public_ip_on_launch = false
   tags = {
-    Name = "Terraform-Priv-Sub"
+    "kubernetes.io/cluster/eks-cluster" : "shared"
   }
 }
 
 resource "aws_subnet" "priv-sub2" {
-  availability_zone       = "eu-west-1b"
+  availability_zone       = "eu-west-1c"
   vpc_id                  = aws_vpc.terraform-vpc.id
   cidr_block              = "10.0.3.0/24"
   map_public_ip_on_launch = false
   tags = {
-    Name = "Terraform-Priv-Sub2"
+    "kubernetes.io/cluster/eks-cluster" : "shared"
   }
 }
 
